@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   get('/api/coord_form', { :controller => "api", :action => "coord_form"})
   get('/api/coord_process', { :controller => "api", :action => "coord_process"})
 
+
+
+get('/api/congress_form', { :controller => "api", :action => "congress_form"})
+  get('/api/congress_process', { :controller => "api", :action => "congress_process"})
+
+
   get('/auth_api/mashape_intro_form', { :controller => "auth_api", :action => "mashape_intro_form"})
   get('/auth_api/mashape_intro_process', { :controller => "auth_api", :action => "mashape_intro_process"})
   # The priority is based upon order of creation: first created -> highest priority.

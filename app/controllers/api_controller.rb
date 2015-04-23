@@ -66,6 +66,17 @@ class ApiController < ApplicationController
     #
     # Ref: http://www.loc.gov/pictures/search/?q=computer&fo=json
     #================================================
+
+ address = URI.encode(params["text"])
+    url = "http://www.loc.gov/pictures/search/?q=#{address}&fo=json"
+    initial_info = open(url).read
+    parsed_info = JSON.parse(initial_info)
+    @result = parsed_info["results"][1]["image"]["full"]
+
+
+
+
+
   end
 
   def random_user
