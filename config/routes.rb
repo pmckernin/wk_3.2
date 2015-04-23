@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get('/api/coord_process', { :controller => "api", :action => "coord_process"})
 
 
+get('/api/random_process', { :controller => "api", :action => "random_process"})
 
 get('/api/congress_form', { :controller => "api", :action => "congress_form"})
   get('/api/congress_process', { :controller => "api", :action => "congress_process"})

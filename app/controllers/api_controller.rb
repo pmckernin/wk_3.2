@@ -79,7 +79,7 @@ class ApiController < ApplicationController
 
   end
 
-  def random_user
+  def random_process
     #=== Instructions ===================================
     # Use the Radom User API to create a dynamic profile page
     # that changes on page refresh. Use at least 3 items from
@@ -87,6 +87,15 @@ class ApiController < ApplicationController
     #
     # Ref: http://api.randomuser.me/
     #================================================
+
+      url = "http://api.randomuser.me/"
+      initial_info = open(url).read
+      parsed_info = JSON.parse(initial_info)
+
+      @name = parsed_info["results"][0]["user"]["name"]["first"]
+      @user_name = parsed_info["results"][0]["user"]["username"]
+      @picture = parsed_info["results"][0]["user"]["picture"]["large"]
+
   end
 
   def wiki_image_form
