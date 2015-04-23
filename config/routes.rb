@@ -10,6 +10,9 @@ get('/api/random_process', { :controller => "api", :action => "random_process"})
 get('/api/congress_form', { :controller => "api", :action => "congress_form"})
   get('/api/congress_process', { :controller => "api", :action => "congress_process"})
 
+get('/api/wiki_form', { :controller => "api", :action => "wiki_form"})
+  get('/api/wiki_process', { :controller => "api", :action => "wiki_process"})
+
 
   get('/auth_api/mashape_intro_form', { :controller => "auth_api", :action => "mashape_intro_form"})
   get('/auth_api/mashape_intro_process', { :controller => "auth_api", :action => "mashape_intro_process"})

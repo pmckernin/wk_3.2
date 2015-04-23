@@ -98,20 +98,28 @@ class ApiController < ApplicationController
 
   end
 
-  def wiki_image_form
+  def wiki_form
     #=== Instructions ===================================
     # Create a form to send a keyword to the wiki_image_process
     # action
     #================================================
   end
 
-  def wiki_image_process
+  def wiki_process
     #=== Instructions ===================================
     # Use the Wikipedia API to display a relevant
     # picture or set of pictures based on a user-submitted keyword
     #
     # Ref: http://techslides.com/grab-wikipedia-pictures-by-api-with-php
     #================================================
+change = params["text"].gsub(/\s+/ , "_")
+
+address = URI.encode(change)
+    url = "http://en.wikipedia.org/w/api.php?action=query&titles=File:#{address}.jpg&prop=imageinfo&iiprop=url&format=json"
+
+    initial_info = open(url).read
+    parsed_info = JSON.parse(initial_info)
+    @result = parsed_info["query"]["pages"]["-1"]["imageinfo"][0]["url"]
   end
 
   def nearest_station
@@ -124,5 +132,11 @@ class ApiController < ApplicationController
     #
     # Ref: http://www.divvybikes.com/stations/json/
     #================================================
+
+
+
+
+
+
   end
 end
