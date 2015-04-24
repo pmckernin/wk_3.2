@@ -14,6 +14,9 @@ get('/api/wiki_form', { :controller => "api", :action => "wiki_form"})
   get('/api/wiki_process', { :controller => "api", :action => "wiki_process"})
 
 
+get('/api/nearest_station', { :controller => "api", :action => "nearest_station"})
+
+
   get('/auth_api/mashape_intro_form', { :controller => "auth_api", :action => "mashape_intro_form"})
   get('/auth_api/mashape_intro_process', { :controller => "auth_api", :action => "mashape_intro_process"})
   # The priority is based upon order of creation: first created -> highest priority.

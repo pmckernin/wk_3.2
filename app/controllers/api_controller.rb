@@ -133,7 +133,33 @@ address = URI.encode(change)
     # Ref: http://www.divvybikes.com/stations/json/
     #================================================
 
+        #how to raise someing [     raise    varable.inspect       ]
 
+   all_stations = []
+
+
+    url = "http://www.divvybikes.com/stations/json/"
+    initial_info = open(url).read
+    parsed_info = JSON.parse(initial_info)
+
+
+      stations = parsed_info["stationBeanList"]
+
+
+
+
+      stations.each do |stations|
+           if  stations["availableBikes"] > 5
+          all_stations.push(stations["stationname" ] )
+        end
+
+      end
+
+
+@result = all_stations
+
+   # Just displaying info from one station
+   #@result = parsed_info["stationBeanList"][0]["availableBikes"]
 
 
 
